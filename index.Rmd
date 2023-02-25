@@ -5,82 +5,43 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+This dataset examines the seven main books of the Harry Potter Series in ciruclation in the Seattle Public Library Systems from the years 2005 to 2023. The project examines variables and trends like the number of checkouts the series as a whole had between 2005 and 2023, the number of checkouts individual books within the series had between 2005 and 2023, as well as how many books of the Harry Potter series were checked out compared to eBooks. The dataset focuses on the series of books but also evaluated the books individually. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+This project's analysis of the seven main books of the Harry Potter series revealed that the series had the most number of cumulative checkouts in the year **2007** with **4,436** total checkouts across all books that year. The average yearly number of checkouts for the whole series was approximately **2,839** checkouts, and **53,944** total checkouts of books from the Harry Potter series were made between the years 2005 and 2023. The book with the single most number of checkouts in a year was **Harry Potter and the Deathly Hallows** with **1,406** total checkouts in the year **2007**.
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+The data was published by the Seattle Public Library and was last updated on February 6, 2023. The parameters of the data include the "UsageClass" or whether the book is physical or digital, the "CheckoutType" which is the program through which the checkouts were made, the "MaterialType" which differentiates books, ebooks, soundtracks, etc., checkout year, checkout month, number of checkouts, title, ISBN, creator, subject, publisher, and publication year. According to the Seattle Public Library, the checkout data comes from multiple sources. For digital checkouts vendors like Overdrive, hoopla, Freegal, and RBDigital has provided usage data. For physical books the data comes from the Legrady artwork data archives and the Horizon ILS. The data was likely collected in order to maintain and evaluate the library's collection of works. Some possible ethical considerations in how this project deals with the work include how the data was cleaned and filtered. For example, when providing analysis on the data, only the original English versions of the titles were examined and other translations were excluded, this in turn, may have excluded the checkouts of individuals who read in languages other than English. A limitations of the dataset is that it only considers the checkouts in the Seattle Public Library system and does not account for access to these titles through other libraries or sources. 
 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart1.R")}
 ```
+
+This chart depicts the number of total checkouts of the Harry Potter series and the average number of checkouts across the Harry Potter series books between the years 2005 and 2023. The average number of checkouts per year was scaled by a factor of 10 in order to make evaluating the graph easier. The chart reveals that the trends between the total checkouts and average checkouts are similar throughout the years. However, some noticeable deviations do exist. For example, between 2015 and 2020, the number of total checkouts increases dramatically compared to the average number of checkouts. This sort of comparison may indicate that while the total number of checkouts increased, the distribution of checkouts across the books did not change as much, meaning that perhaps while some books were checked out more others were checked out less, balancing out the mean. 
+
+I chose to create this visualization as I thought it would be interesting to examine the average checkouts of all the books compared to the total number of checkouts acorss the series. I expected the twe trends to be similar because of the nature of the evaluation metrics, but I also found this visualization interesting as it was clear where deviations between the trends existed. These differences were particularly interesting and could be visualizaed through this chart. 
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2.R")}
 ```
+
+This chart depicts the total number of checkouts for each of the seven books in the Harry Potter series between the years 2005 and 2023. Some books however, were released later than 2005 and only have data available since their later release date. This chart reveals the trends of each book and visualization some very interesting information. For example, while earlier book the series begin with relatively lower numbers of checkouts then rise and fall over time, later books in the series, particularly the last book Harry Potter and the Deathly Hallows, begins at a very high number of checkouts and gradually falls over time. Another interesting trend is that every book hits a local minimum or dip during the year 2020. Apart from the trend of later books having more checkouts when they they are initially released, most books tend to follows similar patterns in the number of checkouts, rising and falling relative to one another. 
+
+I chose to create this visualization as I was interesting in seeing how the individual books compared to one another in the number of checkouts they had per year. Through this visualization, trends in how popular the books were relative to the others could be examined. 
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R")}
 ```
 
+This chart shows the number of physical books checked out in the Harry Potter series and the number of eBooks checked out. The data regarding eBooks is not available earlier on and only begins in 2012. However, this visualization reveals the relationship between physical book checkout and eBook checkouts. Some noteworthy trends for example include around 2020, the number of book versus eBook checkouts flipped with eBooks being checked out more often that physical books. There was a steady rise in the number of eBooks checked out between its inception around 2012 and 2017. 
+
+I chose this visualization as I thought it would be interesting to compare how many eBooks were being checked out compared to physical books. It seems like compared to several years ago, the prevalence of audio books and eBooks has grown enormously. So I was curious to better characterize whether this increased eBook market was reflected in the Harry Potter series within the Seattle Public Library system. 
 
