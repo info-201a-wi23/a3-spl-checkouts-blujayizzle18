@@ -36,7 +36,7 @@ This chart depicts the total number of checkouts for each of the seven books in 
 
 I chose to create this visualization as I was interesting in seeing how the individual books compared to one another in the number of checkouts they had per year. Through this visualization, trends in how popular the books were relative to the others could be examined. 
 
-### Your Choice
+### Chart Three
 
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R")}
 ```
